@@ -2,7 +2,6 @@
 
 * {
     font-family: 'Lato', sans-serif;
-
 }
 
 body {
@@ -71,12 +70,13 @@ button.submit {
 }
 
 div.result {
-    color: rgb(184, 178, 178);
+    text-align: center;
 }
 
 div.from,
 div.to {
-    font-size: 25px;
+    font-size: 28px;
+    color: rgb(165, 151, 151);
 }
 
 div.calculated,
@@ -87,4 +87,12 @@ div.to {
 div.calculated {
     font-size: 90px;
     font-weight: bold;
+    color: rgb(204, 204, 245);
+}
+
+div.from-to,
+div.to-from {
+    margin: 7px;
+    font-size: 18px;
+    color: rgb(204, 197, 197);
 }

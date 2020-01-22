@@ -40,6 +40,9 @@ const selectedBaseCurrency = document.querySelector('div.from');
 const selectedOutputCurrency = document.querySelector('div.to');
 const calculated = document.querySelector('div.calculated');
 const submitBtn = document.querySelector('.submit');
+const fromTo = document.querySelector('.from-to');
+const toFrom = document.querySelector('.to-from');
+
 
 // Converting object with all currencies to list of options and adding it as a html to a select fields
 const generateOptions = (options) => {
@@ -72,10 +75,14 @@ async function calculate() {
 async function render(e) {
     e.preventDefault();
     if (input.value) {
+        const calcFromTo = await (await convert(1, selectFirstCurrency.value, selectSecondCurrency.value)).toFixed(3);
+        const calcToFrom = await (await convert(1, selectSecondCurrency.value, selectFirstCurrency.value)).toFixed(3);
         const result = await calculate();
-        selectedBaseCurrency.textContent = `${input.value} ${selectFirstCurrency.value} =`
-        selectedOutputCurrency.textContent = `${selectSecondCurrency.value}`
-        calculated.textContent = `${result.toFixed(3)}`
+        selectedBaseCurrency.textContent = `${input.value} ${selectFirstCurrency.value} =`;
+        selectedOutputCurrency.textContent = `${selectSecondCurrency.value}`;
+        calculated.textContent = `${result.toFixed(3)}`;
+        fromTo.textContent = `1 ${selectFirstCurrency.value} is ${calcFromTo} ${selectSecondCurrency.value}`;
+        toFrom.textContent = `1 ${selectSecondCurrency.value} is ${calcToFrom} ${selectFirstCurrency.value}`;
     } else selectedBaseCurrency.textContent = 'Insert amount';
 }
 
