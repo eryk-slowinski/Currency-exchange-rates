@@ -6,21 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Currency converter</title>
+    <script src="https://kit.fontawesome.com/95ed1b881a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <input type="number" name="amount">
-    <select name="currency-one" id="currency-one">
-        <option>Select currency</option>
-    </select>
-
-    <select name="currency-two" id="currency-two">
-        <option>Select currency</option>
-    </select>
-
-    <div class="calculated"></div>
-
+    <div class="wrap">
+        <form action="">
+            <p class="data">
+                <label for="amount">Amount</label>
+                <input type="number" name="amount" id="amount" class="input-amount">
+            </p>
+            <p class="data">
+                <label for="currency-one">From</label>
+                <select name="currency-one" id="currency-one" class="input-from"></select>
+            </p>
+            <p class="data">
+                <label for="currency-two">To</label>
+                <select name="currency-two" id="currency-two" class="input-to"></select>
+            </p>
+            <button type="submit" class="submit">
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </button>
+        </form>
+        <div class="result">
+            <div class="from">20 euro is</div>
+            <div class="calculated">20</div>
+            <div class="to">usd</div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 

@@ -1,3 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+
+}
+
 body {
-    background-color: #666;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, rgba(57, 64, 152, 1) 2%, rgba(70, 120, 172, 1) 50%, rgba(19, 80, 155, 1) 100%);
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80vw;
+    height: 40vh;
+    position: relative;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(29, 5, 116, 0.3);
+    border-radius: 25px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.data {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-amount,
+.input-from,
+.input-to {
+    margin-left: 30px;
+    font-size: 20px;
+    color: #0D2D79;
+    font-weight: bold;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+}
+
+input.input-amount {
+    width: 150px;
+}
+
+form label {
+    margin: 0 0 10px 30px;
+    font-size: 25px;
+    color: rgb(235, 225, 225);
+}
+
+button.submit {
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+    color: #002272;
+    background-color: #FCB813;
+    border: none;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+div.result {
+    color: rgb(184, 178, 178);
+}
+
+div.from,
+div.to {
+    font-size: 25px;
+}
+
+div.calculated,
+div.to {
+    display: inline-block;
+}
+
+div.calculated {
+    font-size: 90px;
+    font-weight: bold;
 }

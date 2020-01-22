@@ -36,7 +36,10 @@ const courses = {};
 const input = document.querySelector('input');
 const selectFirstCurrency = document.querySelector('#currency-one');
 const selectSecondCurrency = document.querySelector('#currency-two');
-const divOutput = document.querySelector('.calculated');
+const selectedBaseCurrency = document.querySelector('div.from');
+const selectedOutputCurrency = document.querySelector('div.to');
+const calculated = document.querySelector('div.calculated');
+const submitBtn = document.querySelector('.submit');
 
 // Converting object with all currencies to list of options and adding it as a html to a select fields
 const generateOptions = (options) => {
@@ -63,8 +66,18 @@ async function convert(amount, base, output) {
 }
 
 async function calculate() {
-    const calculated = await convert(input.value, selectFirstCurrency.value, selectSecondCurrency.value);
-    divOutput.textContent = calculated;
+    return await convert(input.value, selectFirstCurrency.value, selectSecondCurrency.value);
 }
 
-input.addEventListener('input', calculate);
+async function render(e) {
+    e.preventDefault();
+    if (input.value) {
+        const result = await calculate();
+        selectedBaseCurrency.textContent = `${input.value} ${selectFirstCurrency.value} =`
+        selectedOutputCurrency.textContent = `${selectSecondCurrency.value}`
+        calculated.textContent = `${result.toFixed(3)}`
+    } else selectedBaseCurrency.textContent = 'Insert amount';
+}
+
+
+submitBtn.addEventListener('click', render);
