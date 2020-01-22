@@ -46,7 +46,7 @@ const toFrom = document.querySelector('.to-from');
 
 // Converting object with all currencies to list of options and adding it as a html to a select fields
 const generateOptions = (options) => {
-    return Object.entries(options).map(([currencyCode, currencyName, xx]) =>
+    return Object.entries(options).map(([currencyCode, currencyName]) =>
         `<option value="${currencyCode}">${currencyCode} - ${currencyName}</option>`)
 }
 const options = generateOptions(currencies);
