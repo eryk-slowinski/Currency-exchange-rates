@@ -15,8 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 80vw;
-    height: 40vh;
+    width: 85vw;
     position: relative;
     top: 200px;
     left: 50%;
@@ -25,15 +24,20 @@ body {
     border-radius: 25px;
 }
 
+h1 {
+    font-size: 40px;
+    color: rgb(188, 188, 211);
+}
+
 form {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 p.data {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 .input-amount,
@@ -48,7 +52,7 @@ p.data {
     border-radius: 10px;
 }
 
-input.input-amount {
+.input-amount {
     width: 150px;
 }
 
@@ -71,6 +75,7 @@ button.submit {
 
 div.result {
     text-align: center;
+    margin: 15px 0 10px 0;
 }
 
 div.from,
@@ -95,4 +100,40 @@ div.to-from {
     margin: 7px;
     font-size: 18px;
     color: rgb(204, 197, 197);
+}
+
+@media (max-width: 1024px) {
+    .input-amount {
+        width: 100px;
+    }
+
+    .input-from,
+    .input-to {
+        width: 210px
+    }
+}
+
+@media (max-width: 800px) {
+    h1 {
+        text-align: center;
+    }
+
+    .wrap {
+        width: 80vw;
+        top: 10px;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button.submit {
+        font-size: 40px;
+        margin: 15px 0 0 15px;
+    }
+
+    div.calculated {
+        font-size: 50px;
+    }
 }
